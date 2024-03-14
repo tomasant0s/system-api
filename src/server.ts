@@ -4,7 +4,7 @@ import { router } from './routes';
 
 const app = express()
 const port = 3333
-app.use(express.json)
+app.use(express.json())
 app.use(router)
 
 app.use((err: Error, request: Request, response:Response, next: NextFunction) => {

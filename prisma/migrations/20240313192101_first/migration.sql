@@ -29,5 +29,20 @@ CREATE TABLE "TreinamentosFuncionario" (
     CONSTRAINT "TreinamentosFuncionario_treinamentoId_fkey" FOREIGN KEY ("treinamentoId") REFERENCES "treinamento" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "usuario" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "nome" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "telefone" TEXT NOT NULL,
+    "perfil" TEXT NOT NULL,
+    "senha" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "TreinamentosFuncionario_funcionarioId_treinamentoId_key" ON "TreinamentosFuncionario"("funcionarioId", "treinamentoId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "usuario_email_key" ON "usuario"("email");
